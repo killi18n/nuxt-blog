@@ -85,7 +85,6 @@ exports.list = function (ctx) { return __awaiter(_this, void 0, void 0, function
                     return [2 /*return*/];
                 }
                 tag = ctx.query.tag;
-                console.log('tag', tag);
                 query = tag
                     ? {
                         tags: tag,

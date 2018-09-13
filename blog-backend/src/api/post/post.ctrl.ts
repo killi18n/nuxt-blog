@@ -32,14 +32,12 @@ export const list = async (ctx: any) => {
 
   const { tag } = ctx.query;
 
-  console.log('tag', tag);
   const query = tag
     ? {
         tags: tag,
       }
     : {};
 
-  //   console.log(query, page);
   try {
     const posts = await Post.find(query)
       .sort({ _id: -1 })

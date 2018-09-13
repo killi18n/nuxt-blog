@@ -17,15 +17,6 @@ export default {
       lastPage: null
     };
   },
-  async mounted() {
-    // try {
-    //   await this.$store.dispatch("post/postList", {
-    //         page: newValue,
-    //         tag: this.$route.query.tag
-    //       });
-    // } catch(e) {
-    // }
-  },
   async asyncData({ store, route }) {
     try {
       await store.dispatch("post/postList", {

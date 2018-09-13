@@ -1,0 +1,32 @@
+{
+  "name": "blog-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "start:dev": "cross-env NODE_PATH=dist nodemon --watch dist/ dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/dotenv": "^4.0.3",
+    "@types/joi": "^13.4.4",
+    "@types/koa": "^2.0.46",
+    "@types/koa-bodyparser": "^5.0.1",
+    "@types/koa-router": "^7.0.31",
+    "@types/koa-session": "^5.7.4",
+    "@types/mongoose": "^5.2.12",
+    "dotenv": "^6.0.0",
+    "joi": "^13.6.0",
+    "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.9.0",
+    "mongoose": "^5.2.14",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.0.3"
+  }
+}

@@ -4,7 +4,7 @@
             <h1>{{title}}</h1>
             <div class="tags" v-if="tags" >
                 <div v-for="tag in tags" :key="tag">
-                    <nuxt-link :to="{name: 'tags-tag', params: {tag}}">#{{tag}}</nuxt-link>
+                    <nuxt-link :to="{name: 'index', query: {tag: tag}}">#{{tag}}</nuxt-link>
                 </div>
             </div>
             <div class="date" v-if="date !== 'Invalid date'">{{date}}</div>

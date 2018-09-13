@@ -13,6 +13,18 @@
 import PostInfo from "@/components/post/PostInfo";
 import PostBody from "@/components/post/PostBody";
 export default {
+  head() {
+    return {
+      title: this.post.title,
+      meta: [
+        {
+          hid: this.post._id,
+          name: "description",
+          content: `${this.post.title} - ${this.post.body.slice(0, 200)}...`
+        }
+      ]
+    };
+  },
   components: {
     PostInfo,
     PostBody

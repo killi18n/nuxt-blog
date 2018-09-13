@@ -73,6 +73,9 @@ export default {
       &:active {
         background: $oc-blue-8;
       }
+      @include media("<medium") {
+        font-size: 0.5rem;
+      }
     }
 
     .button + .button {

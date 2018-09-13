@@ -1,9 +1,9 @@
 <template>
     <div class="post-info">
         <div class="info">
-            <h1>{{title}}</h1>
+            <h1 class="title">{{title}}</h1>
             <div class="tags" v-if="tags" >
-                <div v-for="tag in tags" :key="tag">
+                <div class="tag" v-for="tag in tags" :key="tag">
                     <nuxt-link :to="{name: 'index', query: {tag: tag}}">#{{tag}}</nuxt-link>
                 </div>
             </div>
@@ -35,18 +35,21 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+
   .info {
     margin-top: -5rem; // 헤더 크기 만큼 위로
     width: 1024px;
     padding: 1rem;
     color: white;
-    h1 {
+
+    .title {
       font-weight: 300;
       font-size: 3rem;
       margin: 0;
       word-wrap: break-word; // 내용이 너무 길면 다음 줄에 작성
     }
     .tags {
+      display: flex;
       margin-top: 1rem;
       font-size: 1.25rem;
       font-weight: 500;
@@ -55,7 +58,7 @@ export default {
           text-decoration: underline;
         }
       }
-      a + a {
+      .tag + .tag {
         margin-left: 0.25rem; // 사이 여백
       }
     }
@@ -69,22 +72,24 @@ export default {
 
   @include media("<large") {
     .info {
-      h1 {
+      .title {
         font-size: 2rem;
       }
       .tags,
       .date {
         font-size: 1rem;
       }
-      width: 768px;
+      width: 100%;
     }
   }
+
   @include media("<medium") {
     height: auto;
     padding-bottom: 4rem;
     .info {
       padding-top: 0;
       margin: 0;
+
       .tags {
         margin-top: 0.25rem;
       }
